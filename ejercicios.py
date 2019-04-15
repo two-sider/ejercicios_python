@@ -71,8 +71,40 @@ def ej4():
 # todos los números de una lista.
 # Por ejemplo: sum([1,2,3,4]) debería devolver 10 y multip([1,2,3,4]) debería devolver 24.
 
-# 6- Definir una función inversa() que calcule la inversión de una cadena. Por ejemplo la cadena "estoy probando" debería devolver la cadena "odnaborp yotse"
+def sum(lista):
+    suma = 0
+    for i in lista:
+        suma += i
+    return suma
 
+def multip(lista):
+    multip = 1
+    for i in lista:
+        multip *= i
+    return multip
+
+def ej5():
+    lista1 = [1,2,3,4]
+    vsuma = sum(lista1)
+    vmultip = multip(lista1)
+    print("la suma de la lista es "+str(vsuma))
+    print("la multiplicacion de la lista es "+str(vmultip))
+
+# 6- Definir una función inversa() que calcule la inversión de una cadena. Por ejemplo la cadena "estoy probando" debería devolver la cadena "odnaborp yotse"
+def inversa (cadena):
+    invertida = ""
+    cont = len(cadena)
+    indice = -1
+    while cont >= 1:
+        invertida += cadena[indice]
+        indice = indice + (-1)
+        cont -= 1
+    return invertida
+
+def ej6():
+    cadena = str(input("Escribe una cadena para invertir \n"))
+    cadena_invertida = inversa(cadena)
+    print(cadena_invertida)
 # 7 - Definir una función es_palindromo() que reconoce palíndromos (es decir, palabras que tienen el mismo aspecto escritas invertidas), ejemplo: es_palindromo ("radar") tendría que devolver True.
 
 # 8- Definir una función superposicion() que tome dos listas y devuelva True si tienen al menos 1 miembro en común o devuelva False de lo contrario. Escribir la función usando el bucle for anidado.
@@ -93,4 +125,8 @@ def ejercicios():
         ej3()
     elif ejercicio == 4:
         ej4()
+    elif ejercicio == 5:
+        ej5()
+    elif ejercicio == 6:
+        ej6()
 ejercicios()
